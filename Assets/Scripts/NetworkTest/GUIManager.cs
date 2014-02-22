@@ -85,6 +85,8 @@ public class GUIManager : MonoBehaviour
 	{
 		networkView.RPC("ClientConnect", RPCMode.Server);
 		isSecondPlayerReady = true;
+
+		PlayerSpawnPoint.instance.NetworkSpawn();
 	}
 
 	[RPC]
@@ -92,6 +94,8 @@ public class GUIManager : MonoBehaviour
 	{
 		Debug.Log("Client Called");
 		isSecondPlayerReady = true;
+
+		PlayerSpawnPoint.instance.NetworkSpawn();
 	}
 	#endregion
 }
