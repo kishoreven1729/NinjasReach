@@ -9,12 +9,13 @@ public class CharacterControl : MonoBehaviour {
 	public Shuriken shuriken;
 	public Transform spawnPoint;
 	private bool _shurikenInHand = true;
+    private Animator _animator;
 
     public AudioClip teleportSFX;
 
 	// Use this for initialization
 	void Start () {
-	
+        _animator = GetComponentInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -48,6 +49,7 @@ public class CharacterControl : MonoBehaviour {
 
 	void CreateShuriken()
 	{
+        _animator.SetTrigger("Throw");
 		GameObject go = Instantiate(shurikenPrefab, spawnPoint.position, Quaternion.identity) as GameObject;
 		shuriken = go.GetComponent<Shuriken>();
 		shuriken.Character = this;
@@ -56,6 +58,7 @@ public class CharacterControl : MonoBehaviour {
 
 	void Teleport()
 	{
+        _animator.SetTrigger("Teleport");
         AudioManager.Instance.PlaySound(teleportSFX);
 		Vector3 shurikenPos = shuriken.transform.position;
 		transform.position = shurikenPos;
