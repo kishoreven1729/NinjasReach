@@ -10,6 +10,8 @@ public class CharacterControl : MonoBehaviour {
 	public Transform spawnPoint;
 	private bool _shurikenInHand = true;
 
+    public AudioClip teleportSFX;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -41,7 +43,7 @@ public class CharacterControl : MonoBehaviour {
 
 	void GetShurikenDirection()
 	{
-		_shurikenDirection = Input.mousePosition - relativePos;
+		_shurikenDirection = (Input.mousePosition - relativePos).normalized;
 	}
 
 	void CreateShuriken()
@@ -54,6 +56,7 @@ public class CharacterControl : MonoBehaviour {
 
 	void Teleport()
 	{
+        AudioManager.Instance.PlaySound(teleportSFX);
 		Vector3 shurikenPos = shuriken.transform.position;
 		transform.position = shurikenPos;
 		Destroy(shuriken.gameObject);

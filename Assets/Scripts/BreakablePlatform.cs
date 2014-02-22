@@ -5,10 +5,11 @@ public class BreakablePlatform : MonoBehaviour
 {
 
     public float lifeTime;
-    
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
+    public GameObject realCollider;
+
+    void OnTriggerEnter2D(Collider2D other) {
+
+        if (other.gameObject.tag == "Player")
         {
             StartCoroutine("Break");
         }
@@ -17,7 +18,7 @@ public class BreakablePlatform : MonoBehaviour
     IEnumerator Break()
     {
         yield return new WaitForSeconds(lifeTime);
-        Destroy(collider2D);
+        Destroy(realCollider);
 
         // TODO: play animation
 
