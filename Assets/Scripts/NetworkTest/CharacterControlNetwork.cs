@@ -9,10 +9,11 @@ public class CharacterControlNetwork : MonoBehaviour {
 	public ShurikenNetwork shuriken;
 	public Transform spawnPoint;
 	private bool _shurikenInHand = true;
+    private Animator _animator;
 
 	// Use this for initialization
 	void Start () {
-	
+        _animator = GetComponentInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -46,6 +47,7 @@ public class CharacterControlNetwork : MonoBehaviour {
 
 	void CreateShuriken()
 	{
+        _animator.SetTrigger("Throw");
 		GameObject go = Instantiate(shurikenPrefab, spawnPoint.position, Quaternion.identity) as GameObject;
 		shuriken = go.GetComponent<ShurikenNetwork>();
 		shuriken.Character = this;
@@ -54,6 +56,7 @@ public class CharacterControlNetwork : MonoBehaviour {
 
 	void Teleport()
 	{
+        _animator.SetTrigger("Teleport");
 		Vector3 shurikenPos = shuriken.transform.position;
 		transform.position = shurikenPos;
 		Destroy(shuriken.gameObject);
