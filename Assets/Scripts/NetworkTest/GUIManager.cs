@@ -8,6 +8,8 @@ public class GUIManager : MonoBehaviour
 	#region Private Variables
 	private string	connectionIP;
 	private int		connectionPort;
+
+	private bool	isSecondPlayerReady;
 	#endregion
 
 	#region Public Variables
@@ -20,6 +22,8 @@ public class GUIManager : MonoBehaviour
 	{
 		connectionIP = "192.168.16.74";
 		connectionPort = 25001;
+
+		isSecondPlayerReady = false;
 	}
 	#endregion
 	
@@ -53,13 +57,29 @@ public class GUIManager : MonoBehaviour
 			}
 			else
 			{
-				GUI.Label(new Rect(200, 200, 150, 30), "GO NINJAS!!");
+				if(isSecondPlayerReady == false)
+				{
+					GUI.Label(new Rect(200, 200, 150, 30), "Player 2 connecting ...");
+				}
+				else
+				{
+					GUI.Label(new Rect(200, 200, 150, 30), "GO NINJAS!!");
+				}
 			}
 		}
 		else if(Network.peerType == NetworkPeerType.Client)
 		{
+			networkView.RPC("ClientConnect", RPCMode.Server);
 			GUI.Label(new Rect(200, 200, 150, 30), "GO NINJAS!!");
 		}
+	}
+	#endregion
+
+	#region Methods
+	[RPC]
+	public void ClientConnect()
+	{
+		isSecondPlayerReady = true;
 	}
 	#endregion
 }
