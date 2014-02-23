@@ -3,7 +3,8 @@ using System.Collections;
 
 public class PlayerSpawnPoint : MonoBehaviour {
 
-    public GameObject playerPrefab;
+    public GameObject player1Prefab;
+	public GameObject player2Prefab;
 	public static PlayerSpawnPoint instance;
 
 	public Transform clientCharacter;
@@ -22,8 +23,8 @@ public class PlayerSpawnPoint : MonoBehaviour {
 
     void Spawn()
     {
-        GameObject go = Instantiate(playerPrefab, transform.position, Quaternion.identity) as GameObject;
-        Camera.main.SendMessage("SetTarget", go.transform);
+        /*GameObject go = Instantiate(playerPrefab, transform.position, Quaternion.identity) as GameObject;
+        Camera.main.SendMessage("SetTarget", go.transform);*/
     }
 
 	public void NetworkSpawn()
@@ -33,7 +34,7 @@ public class PlayerSpawnPoint : MonoBehaviour {
 			Vector3 position = transform.position;
 			position.x -= 50.0f;
 
-			GameObject go = Network.Instantiate(playerPrefab, transform.position, Quaternion.identity, 0) as GameObject;
+			GameObject go = Network.Instantiate(player1Prefab, transform.position, Quaternion.identity, 0) as GameObject;
 			go.name = "Server";
 			Camera.main.SendMessage("SetTarget", go.transform);
 
@@ -41,7 +42,7 @@ public class PlayerSpawnPoint : MonoBehaviour {
 		}
 		else if(Network.isClient)
 		{
-			GameObject go = Network.Instantiate(playerPrefab, transform.position, Quaternion.identity, 0) as GameObject;
+			GameObject go = Network.Instantiate(player2Prefab, transform.position, Quaternion.identity, 0) as GameObject;
 			go.name = "Client";
 
 			Camera.main.SendMessage("SetTarget", go.transform);
