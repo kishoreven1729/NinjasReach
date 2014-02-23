@@ -41,7 +41,7 @@ public class ShurikenNetwork : MonoBehaviour {
 	{
 		if (GameManager.Instance.OutOfBoundary(transform.position))
 		{
-			Destroy(gameObject);
+			Network.Destroy(gameObject);
 			_character.SetShurikenInHand(true);
 		}
 	}

@@ -58,7 +58,9 @@ public class CharacterControlNetwork : MonoBehaviour {
         _animator.SetTrigger("Teleport");
 		Vector3 shurikenPos = shuriken.transform.position;
 		transform.position = shurikenPos;
-		Destroy(shuriken.gameObject);
+//		Destroy(shuriken.gameObject);
+
+		Network.Destroy(shuriken.gameObject);
 	}
 
 	void OnDrawGizmos()
