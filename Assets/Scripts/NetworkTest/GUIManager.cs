@@ -21,7 +21,7 @@ public class GUIManager : MonoBehaviour
 	void Start () 
 	{
 //		connectionIP = "192.168.16.74";
-		connectionIP = Network.player.externalIP;
+		connectionIP = Network.player.ipAddress;
 		connectionPort = 25001;
 
 		isSecondPlayerReady = false;
