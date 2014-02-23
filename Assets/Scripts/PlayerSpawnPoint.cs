@@ -9,6 +9,7 @@ public class PlayerSpawnPoint : MonoBehaviour {
 	public Transform clientCharacter;
 	public Transform serverCharacter;
 
+
 	void Awake()
 	{
 		instance = this;
@@ -16,7 +17,7 @@ public class PlayerSpawnPoint : MonoBehaviour {
 
     void Start()
     {
-        Spawn();
+        //Spawn();
     }
 
     void Spawn()
