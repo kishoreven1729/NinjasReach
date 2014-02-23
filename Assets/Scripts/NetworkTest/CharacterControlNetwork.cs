@@ -46,7 +46,8 @@ public class CharacterControlNetwork : MonoBehaviour {
 	void CreateShuriken()
 	{
         _animator.SetTrigger("Throw");
-		GameObject go = Instantiate(shurikenPrefab, spawnPoint.position, Quaternion.identity) as GameObject;
+//		GameObject go = Instantiate(shurikenPrefab, spawnPoint.position, Quaternion.identity) as GameObject;
+		GameObject go = Network.Instantiate(shurikenPrefab, spawnPoint.position, Quaternion.identity, 0) as GameObject;
 		shuriken = go.GetComponent<ShurikenNetwork>();
 		shuriken.Character = this;
 		shuriken.Direction = _shurikenDirection;
