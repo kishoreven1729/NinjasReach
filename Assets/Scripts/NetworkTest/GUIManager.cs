@@ -37,12 +37,12 @@ public class GUIManager : MonoBehaviour
 	{
 		if(Network.peerType == NetworkPeerType.Disconnected)
 		{
-			if(GUI.Button(new Rect(10.0f, 10.0f, 100.0f, 100.0f), connectButtonTexture))
+			if(GUI.Button(new Rect(10.0f, 10.0f, 200.0f, 65.0f), connectButtonTexture))
 			{
 				Network.Connect(connectionIP, connectionPort);
 			}
 
-			if(GUI.Button(new Rect(150.0f, 10.0f, 100.0f, 100.0f), startButtonTexture))
+			if(GUI.Button(new Rect(250.0f, 10.0f, 200.0f, 65.0f), startButtonTexture))
 			{
 				Network.InitializeServer(10, connectionPort, false);
 			}
@@ -61,7 +61,7 @@ public class GUIManager : MonoBehaviour
 				}
 				else
 				{
-					GUI.Label(new Rect(200, 200, 150, 30), "GO NINJAS!!");
+				
 				}
 			}
 		}
@@ -73,7 +73,7 @@ public class GUIManager : MonoBehaviour
 			}
 			else
 			{
-				GUI.Label(new Rect(200, 200, 150, 30), "GO NINJAS!!");
+
 			}
 		}
 	}
