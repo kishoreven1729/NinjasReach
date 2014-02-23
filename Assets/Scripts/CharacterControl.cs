@@ -75,4 +75,12 @@ public class CharacterControl : MonoBehaviour {
 	{
 		_shurikenInHand = b;
 	}
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "MovingPlatform")
+        {
+            transform.position = new Vector3(collision.gameObject.transform.position.x, transform.position.y, transform.position.z);
+        }
+    }
 }
