@@ -13,7 +13,7 @@ public class PlayerSpawnPoint : MonoBehaviour {
 
     void Start()
     {
-        //Spawn();
+        Spawn();
     }
 
     void Spawn()

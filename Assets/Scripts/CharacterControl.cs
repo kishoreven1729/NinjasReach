@@ -10,6 +10,7 @@ public class CharacterControl : MonoBehaviour {
 	public Transform spawnPoint;
 	private bool _shurikenInHand = true;
     private Animator _animator;
+    private Vector3 teleportPos;
 
     public AudioClip teleportSFX;
 
@@ -58,12 +59,24 @@ public class CharacterControl : MonoBehaviour {
 
 	void Teleport()
 	{
-        _animator.SetTrigger("Teleport");
+        teleportPos = shuriken.transform.position;
+//        _animator.SetTrigger("Teleport");
+        if(shuriken != null)
+        {
+            Destroy(shuriken.gameObject);
+        }
+        transform.position = teleportPos;
         AudioManager.Instance.PlaySound(teleportSFX);
-		Vector3 shurikenPos = shuriken.transform.position;
-		transform.position = shurikenPos;
-		Destroy(shuriken.gameObject);
+		
 	}
+
+    public void OnTeleportCompleted()
+    {
+        print("OnTeleportCompleted");
+//        Vector3 shurikenPos = shuriken.transform.position;
+        transform.position = teleportPos;
+
+    }
 
 	void OnDrawGizmos()
 	{

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 83943c6343ee64a73933ae5bb539c2b8
+guid: bfa94eb7f519740528ed8d384868e485
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -45,7 +45,7 @@ TextureImporter:
     compressionQuality: 50
   spriteSheet:
     sprites:
-    - name: PoofAnim_0
+    - name: PoofAnim 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -54,7 +54,7 @@ TextureImporter:
         height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: PoofAnim_1
+    - name: PoofAnim 1_1
       rect:
         serializedVersion: 2
         x: 110
@@ -63,7 +63,7 @@ TextureImporter:
         height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: PoofAnim_2
+    - name: PoofAnim 1_2
       rect:
         serializedVersion: 2
         x: 220
@@ -72,7 +72,7 @@ TextureImporter:
         height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: PoofAnim_3
+    - name: PoofAnim 1_3
       rect:
         serializedVersion: 2
         x: 330
@@ -81,7 +81,7 @@ TextureImporter:
         height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: PoofAnim_4
+    - name: PoofAnim 1_4
       rect:
         serializedVersion: 2
         x: 440
@@ -90,7 +90,7 @@ TextureImporter:
         height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: PoofAnim_5
+    - name: PoofAnim 1_5
       rect:
         serializedVersion: 2
         x: 0
@@ -99,7 +99,7 @@ TextureImporter:
         height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: PoofAnim_6
+    - name: PoofAnim 1_6
       rect:
         serializedVersion: 2
         x: 110
@@ -108,7 +108,7 @@ TextureImporter:
         height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: PoofAnim_7
+    - name: PoofAnim 1_7
       rect:
         serializedVersion: 2
         x: 220
@@ -117,7 +117,7 @@ TextureImporter:
         height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: PoofAnim_8
+    - name: PoofAnim 1_8
       rect:
         serializedVersion: 2
         x: 330
@@ -126,7 +126,7 @@ TextureImporter:
         height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: PoofAnim_9
+    - name: PoofAnim 1_9
       rect:
         serializedVersion: 2
         x: 440
@@ -135,7 +135,7 @@ TextureImporter:
         height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: PoofAnim_10
+    - name: PoofAnim 1_10
       rect:
         serializedVersion: 2
         x: 0
@@ -144,7 +144,7 @@ TextureImporter:
         height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: PoofAnim_11
+    - name: PoofAnim 1_11
       rect:
         serializedVersion: 2
         x: 110
@@ -153,7 +153,7 @@ TextureImporter:
         height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: PoofAnim_12
+    - name: PoofAnim 1_12
       rect:
         serializedVersion: 2
         x: 220
@@ -162,7 +162,7 @@ TextureImporter:
         height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: PoofAnim_13
+    - name: PoofAnim 1_13
       rect:
         serializedVersion: 2
         x: 330
@@ -171,7 +171,7 @@ TextureImporter:
         height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: PoofAnim_14
+    - name: PoofAnim 1_14
       rect:
         serializedVersion: 2
         x: 440
