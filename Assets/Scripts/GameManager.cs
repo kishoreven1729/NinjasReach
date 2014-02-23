@@ -37,6 +37,11 @@ public class GameManager : MonoBehaviour {
 		return true;
 	}
 
+    public void GameWin()
+    {
+        print("GameWin");
+    }
+
 	public void GameOver()
 	{
 		print("GameOver");
