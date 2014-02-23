@@ -59,24 +59,12 @@ public class CharacterControl : MonoBehaviour {
 
 	void Teleport()
 	{
-        teleportPos = shuriken.transform.position;
-//        _animator.SetTrigger("Teleport");
-        if(shuriken != null)
-        {
-            Destroy(shuriken.gameObject);
-        }
-        transform.position = teleportPos;
-        AudioManager.Instance.PlaySound(teleportSFX);
+        _animator.SetTrigger("Teleport");
+        Vector3 shurikenPos = shuriken.transform.position;
+        transform.position = shurikenPos;
+        Destroy(shuriken.gameObject);
 		
 	}
-
-    public void OnTeleportCompleted()
-    {
-        print("OnTeleportCompleted");
-//        Vector3 shurikenPos = shuriken.transform.position;
-        transform.position = teleportPos;
-
-    }
 
 	void OnDrawGizmos()
 	{

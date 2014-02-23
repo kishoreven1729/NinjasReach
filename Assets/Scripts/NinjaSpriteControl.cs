@@ -20,7 +20,7 @@ public class NinjaSpriteControl : MonoBehaviour {
 
         if(hasAnimationEnded == false)
         {
-            cc.OnTeleportCompleted();
+//            cc.OnTeleportCompleted();
             hasAnimationEnded = true;
         }
         else

@@ -3,9 +3,15 @@ using System.Collections;
 
 public class BreakablePlatform : MonoBehaviour
 {
-
     public float lifeTime;
     public GameObject realCollider;
+    private Animator _animator;
+
+    void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
 
     void OnTriggerEnter2D(Collider2D other) {
 
@@ -21,6 +27,7 @@ public class BreakablePlatform : MonoBehaviour
         Destroy(realCollider);
 
         // TODO: play animation
+        _animator.SetTrigger("Breaking");
 
         yield return new WaitForSeconds(.1f);
         Destroy(gameObject);
