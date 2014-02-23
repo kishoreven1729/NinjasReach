@@ -16,6 +16,7 @@ public class CharacterControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        GameManager.Instance.player1 = this;
         _animator = GetComponentInChildren<Animator>();
 	}
 	

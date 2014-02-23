@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour {
 	public Rect rect;
     public GameObject spawnPoint;
 
+    public CharacterControl player1;
+//    public GameObject player2;
+
 //	public enum InGameState
 
 	void Awake()
