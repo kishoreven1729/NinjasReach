@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rect = new Rect(0f, 0f, Screen.width, Screen.height);
-        spawnPoint.SendMessage("Spawn");
+        //spawnPoint.SendMessage("Spawn");
 	
 	}
 	

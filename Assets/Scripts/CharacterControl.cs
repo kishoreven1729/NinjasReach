@@ -23,7 +23,7 @@ public class CharacterControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		relativePos = Camera.main.WorldToScreenPoint(transform.position);
-		CheckInput();
+		//CheckInput();
 	}
 
 	void CheckInput()
@@ -52,7 +52,8 @@ public class CharacterControl : MonoBehaviour {
 	void CreateShuriken()
 	{
         _animator.SetTrigger("Throw");
-		GameObject go = Instantiate(shurikenPrefab, spawnPoint.position, Quaternion.identity) as GameObject;
+//		GameObject go = Instantiate(shurikenPrefab, spawnPoint.position, Quaternion.identity) as GameObject;
+		GameObject go = Network.Instantiate(shurikenPrefab, spawnPoint.position, Quaternion.identity, 0) as GameObject;
 		shuriken = go.GetComponent<Shuriken>();
 		shuriken.Character = this;
 		shuriken.Direction = _shurikenDirection;
@@ -63,7 +64,8 @@ public class CharacterControl : MonoBehaviour {
         _animator.SetTrigger("Teleport");
         Vector3 shurikenPos = shuriken.transform.position;
         transform.position = shurikenPos;
-        Destroy(shuriken.gameObject);
+//        Destroy(shuriken.gameObject);
+		Network.Destroy(shuriken.gameObject);
 		
 	}
 

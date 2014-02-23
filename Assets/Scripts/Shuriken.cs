@@ -92,7 +92,8 @@ public class Shuriken : MonoBehaviour
 
     void DestroyShuriken()
     {
-        Destroy(gameObject);
+//        Destroy(gameObject);
+		Network.Destroy(gameObject);
         _character.SetShurikenInHand(true);
     }
 
