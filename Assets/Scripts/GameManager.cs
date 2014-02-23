@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager Instance;
 	public Rect rect;
+    public GameObject spawnPoint;
 
 //	public enum InGameState
 
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rect = new Rect(0f, 0f, Screen.width, Screen.height);
+        spawnPoint.SendMessage("Spawn");
 	
 	}
 	
