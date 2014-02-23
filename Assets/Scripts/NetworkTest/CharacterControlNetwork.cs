@@ -19,25 +19,23 @@ public class CharacterControlNetwork : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		relativePos = Camera.main.WorldToScreenPoint(transform.position);
-		CheckInput();
+		//CheckInput();
 	}
 
 	void CheckInput()
 	{
-		if (Input.GetMouseButtonDown(0))
+		if (_shurikenInHand)
 		{
-			if (_shurikenInHand)
-			{
-				GetShurikenDirection();
-				CreateShuriken();
-				SetShurikenInHand(false);
-			}
-			else
-			{
-				Teleport();
-				SetShurikenInHand(true);
-			}
+			GetShurikenDirection();
+			CreateShuriken();
+			SetShurikenInHand(false);
 		}
+		else
+		{
+			Teleport();
+			SetShurikenInHand(true);
+		}
+
 	}
 
 	void GetShurikenDirection()

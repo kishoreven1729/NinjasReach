@@ -20,7 +20,7 @@ public class GUIManager : MonoBehaviour
 	#region Constructor
 	void Start () 
 	{
-		connectionIP = "127.0.01";
+		connectionIP = "192.168.16.74";
 		connectionPort = 25001;
 
 		isSecondPlayerReady = false;
