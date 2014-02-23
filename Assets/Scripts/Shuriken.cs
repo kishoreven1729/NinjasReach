@@ -85,16 +85,17 @@ public class Shuriken : MonoBehaviour
         _isBeingDestroyed = true;
         yield return new WaitForSeconds(lifeTimeAfterBounce);
         AudioManager.Instance.PlaySound(disappearSFX);
-        DestroyShuriken();
         if (disappearParticlePrefab != null)
             Instantiate(disappearParticlePrefab, transform.position, Quaternion.identity);
+
+		DestroyShuriken();
     }
 
     void DestroyShuriken()
     {
 //        Destroy(gameObject);
-		Network.Destroy(gameObject);
         _character.SetShurikenInHand(true);
+		Network.Destroy(gameObject);
     }
 
 }
