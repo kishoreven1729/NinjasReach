@@ -14,6 +14,7 @@ public class Shuriken : MonoBehaviour
     public GameObject disappearParticlePrefab;
     public float lifeTimeAfterBounce;
     private bool _isBeingDestroyed = false;
+    private bool _isPlayingBouncingSFX = false;
 
     public Vector3 Direction
     {
@@ -65,7 +66,12 @@ public class Shuriken : MonoBehaviour
     {
         if (collision.gameObject.tag != "Bouncy")
         {
-            AudioManager.Instance.PlaySound(bounceSFX);
+            if (!_isPlayingBouncingSFX)
+            {
+                audio.Stop();
+                AudioManager.Instance.PlaySound(bounceSFX);
+                _isPlayingBouncingSFX = true;
+            }
             rigidbody2D.gravityScale = 3f;
             if (!_isBeingDestroyed)
             {
