@@ -50,4 +50,17 @@ public class PlayerSpawnPoint : MonoBehaviour {
 			clientCharacter = go.transform;
 		}
 	}
+
+	public void NetworkDestroy()
+	{
+		if(clientCharacter != null)
+		{
+			Network.Destroy(clientCharacter.gameObject);
+		}
+
+		if(serverCharacter != null)
+		{
+			Network.Destroy(serverCharacter.gameObject);
+		}
+	}
 }

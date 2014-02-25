@@ -10,4 +10,16 @@ public class Water : MonoBehaviour {
 	
         transform.Translate(Vector3.up * movingSpeed * Time.deltaTime);
 	}
+
+	void OnTriggerEnter2D(Collider2D other) 
+	{   
+		if (other.gameObject.tag == "Player1")
+		{
+			GUIManager.instance.ClientWins();
+		}
+		else if(other.gameObject.tag == "Player2")
+		{
+			GUIManager.instance.ServerWins();
+		}
+	}
 }

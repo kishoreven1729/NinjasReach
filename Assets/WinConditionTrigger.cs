@@ -11,15 +11,16 @@ public class WinConditionTrigger : MonoBehaviour {
 
     public TriggerType type;
 
-    void OnTriggerEnter2D(Collider2D other) {
-        
-        if (other.gameObject.tag == "Player")
+    void OnTriggerEnter2D(Collider2D other) 
+	{   
+        if (other.gameObject.tag == "Player1")
         {
-            if (type == TriggerType.Win)
-                GameManager.Instance.GameWin();
-            else
-                GameManager.Instance.GameOver();
+			GUIManager.instance.ServerWins();
         }
+		else if(other.gameObject.tag == "Player2")
+		{
+			GUIManager.instance.ClientWins();
+		}
     }
 
 }

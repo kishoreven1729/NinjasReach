@@ -10,6 +10,8 @@ public class InputManager : MonoBehaviour {
 
 	public static InputManager instance;
 
+	public bool		CanCheckInput = true;
+
 
 	void Awake() {
 		instance = this;
@@ -21,20 +23,23 @@ public class InputManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown(0))
+		if(CanCheckInput == true)
 		{
-			if(Network.isClient)
+			if (Input.GetMouseButtonDown(0))
 			{
-				if(PlayerSpawnPoint.instance.clientCharacter != null)
+				if(Network.isClient)
 				{
-					PlayerSpawnPoint.instance.clientCharacter.SendMessage("CheckInput", SendMessageOptions.DontRequireReceiver);
+					if(PlayerSpawnPoint.instance.clientCharacter != null)
+					{
+						PlayerSpawnPoint.instance.clientCharacter.SendMessage("CheckInput", SendMessageOptions.DontRequireReceiver);
+					}
 				}
-			}
-			else if(Network.isServer)
-			{
-				if(PlayerSpawnPoint.instance.serverCharacter != null)
+				else if(Network.isServer)
 				{
-					PlayerSpawnPoint.instance.serverCharacter.SendMessage("CheckInput", SendMessageOptions.DontRequireReceiver);
+					if(PlayerSpawnPoint.instance.serverCharacter != null)
+					{
+						PlayerSpawnPoint.instance.serverCharacter.SendMessage("CheckInput", SendMessageOptions.DontRequireReceiver);
+					}
 				}
 			}
 		}
