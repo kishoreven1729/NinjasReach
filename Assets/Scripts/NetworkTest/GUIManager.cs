@@ -37,8 +37,10 @@ public class GUIManager : MonoBehaviour
 	void Start () 
 	{
 //		connectionIP = "192.168.16.74";
-		connectionIP = "10.159.23.132";
+		connectionIP = "10.159.23.93";
 		connectionPort = 25001;
+
+
 
 		isSecondPlayerReady = false;
 
